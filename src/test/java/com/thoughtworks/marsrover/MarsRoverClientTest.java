@@ -49,4 +49,13 @@ public class MarsRoverClientTest {
 
         assertEquals(position, "5,5,E");
     }
+
+    @Test
+    public void shouldFaceSouthAfterTurnRightCommandWhenFacingEast() {
+        MarsRoverClient marsRoverClient = new MarsRoverClient("5,5,E");
+
+        String position = marsRoverClient.execute("R");
+
+        assertEquals(position, "5,5,S");
+    }
 }
