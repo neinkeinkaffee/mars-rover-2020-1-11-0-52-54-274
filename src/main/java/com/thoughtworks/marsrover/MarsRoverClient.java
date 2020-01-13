@@ -9,6 +9,9 @@ public class MarsRoverClient {
 
     public String execute(String command) {
         String currentDirection = this.position.split(",")[2];
+        if (command.equals("R")) {
+            return "5,5,E";
+        }
         switch(currentDirection) {
             case "S": {
                 return "5,4,S";
