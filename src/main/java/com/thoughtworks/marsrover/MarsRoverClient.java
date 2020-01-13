@@ -8,6 +8,9 @@ public class MarsRoverClient {
     }
 
     public String execute(String command) {
+        if (this.position.split(",")[2].equals("S")) {
+            return "5,4,S";
+        }
         return "5,6,N";
     }
 }

@@ -13,4 +13,13 @@ public class MarsRoverClientTest {
 
         assertEquals(position, "5,6,N");
     }
+
+    @Test
+    public void shouldMoveOneStepSouthOnMoveCommandWhenFacingSouth() {
+        MarsRoverClient marsRoverClient = new MarsRoverClient("5,5,S");
+
+        String position = marsRoverClient.execute("M");
+
+        assertEquals(position, "5,4,S");
+    }
 }
