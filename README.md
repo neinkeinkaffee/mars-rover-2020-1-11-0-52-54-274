@@ -10,7 +10,7 @@ init(5,5,E) + M => (6,5,N)
 init(5,5,W) + M => (4,5,N)
 ```
   
-* Move forward command in edge location results in no change to location and direction
+* (Assumption, needs clarification with business side) Move forward command in edge location results in no change to location and direction
 ```
 init(5,n-1,N) + M => (n-1,n-1,N)
 init(n-1,5,E) + M => (n-1,n-1,E)
