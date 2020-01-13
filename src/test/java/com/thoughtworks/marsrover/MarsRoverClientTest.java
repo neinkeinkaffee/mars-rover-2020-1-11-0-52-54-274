@@ -22,4 +22,22 @@ public class MarsRoverClientTest {
 
         assertEquals(position, "5,4,S");
     }
+
+    @Test
+    public void shouldMoveOneStepEastOnMoveCommandWhenFacingEast() {
+        MarsRoverClient marsRoverClient = new MarsRoverClient("5,5,E");
+
+        String position = marsRoverClient.execute("M");
+
+        assertEquals(position, "6,5,E");
+    }
+
+    @Test
+    public void shouldMoveOneStepWestOnMoveCommandWhenFacingWest() {
+        MarsRoverClient marsRoverClient = new MarsRoverClient("5,5,W");
+
+        String position = marsRoverClient.execute("M");
+
+        assertEquals(position, "4,5,W");
+    }
 }

@@ -8,8 +8,13 @@ public class MarsRoverClient {
     }
 
     public String execute(String command) {
-        if (this.position.split(",")[2].equals("S")) {
+        String currentDirection = this.position.split(",")[2];
+        if (currentDirection.equals("S")) {
             return "5,4,S";
+        } else if (currentDirection.equals("E")) {
+            return "6,5,E";
+        } else if (currentDirection.equals("W")) {
+            return "4,5,W";
         }
         return "5,6,N";
     }
