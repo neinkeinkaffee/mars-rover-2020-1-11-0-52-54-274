@@ -2,12 +2,12 @@ package com.thoughtworks.marsrover;
 
 public class MarsRoverClient {
     private final MarsRover marsRover;
-    private String position;
 
     public MarsRoverClient(String position) {
-        this.position = position;
+        int x = Integer.valueOf(position.split(",")[0]);
+        int y = Integer.valueOf(position.split(",")[1]);
         String direction = position.split(",")[2];
-        this.marsRover = new MarsRover(direction);
+        this.marsRover = new MarsRover(x, y, direction);
     }
 
     public String execute(String command) {

@@ -1,9 +1,13 @@
 package com.thoughtworks.marsrover;
 
 public class MarsRover {
+    private int x;
+    private int y;
     private String direction;
 
-    public MarsRover(String direction) {
+    public MarsRover(int x, int y, String direction) {
+        this.x = x;
+        this.y = y;
         this.direction = direction;
     }
 
@@ -46,7 +50,7 @@ public class MarsRover {
     public String moveForward() {
         switch(this.direction) {
             case "N": {
-                return "5,6,N";
+                return String.join(",", String.valueOf(this.x), String.valueOf(this.y + 1), this.direction);
             }
             case "S": {
                 return "5,4,S";

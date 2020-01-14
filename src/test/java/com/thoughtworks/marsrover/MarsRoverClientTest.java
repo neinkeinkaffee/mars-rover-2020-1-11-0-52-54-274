@@ -112,4 +112,13 @@ public class MarsRoverClientTest {
 
         assertEquals(position, "5,5,S");
     }
+
+    @Test
+    public void shouldMoveOneStepNorthOnMoveCommandWhenFacingNorthAndLocatedIn1_1() {
+        MarsRoverClient marsRoverClient = new MarsRoverClient("1,1,N");
+
+        String position = marsRoverClient.execute("M");
+
+        assertEquals(position, "1,2,N");
+    }
 }
