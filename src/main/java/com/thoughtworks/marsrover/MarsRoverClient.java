@@ -11,8 +11,28 @@ public class MarsRoverClient {
         String currentDirection = this.position.split(",")[2];
         if (command.equals("R")) {
             return moveRight(currentDirection);
+        } else if (command.equals("L")) {
+            return moveLeft(currentDirection);
         }
         return moveForward(currentDirection);
+    }
+
+    private String moveLeft(String currentDirection) {
+        switch (currentDirection) {
+            case "N": {
+                return "5,5,W";
+            }
+            case "E": {
+                return "5,5,N";
+            }
+            case "S": {
+                return "5,5,E";
+            }
+            case "W": {
+                return "5,5,S";
+            }
+        }
+        return null;
     }
 
     private String moveForward(String currentDirection) {

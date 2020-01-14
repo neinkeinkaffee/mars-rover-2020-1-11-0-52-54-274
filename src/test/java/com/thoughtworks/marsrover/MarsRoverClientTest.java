@@ -76,4 +76,40 @@ public class MarsRoverClientTest {
 
         assertEquals(position, "5,5,N");
     }
+
+    @Test
+    public void shouldFaceWestAfterTurnLeftCommandWhenFacingNorth() {
+        MarsRoverClient marsRoverClient = new MarsRoverClient("5,5,N");
+
+        String position = marsRoverClient.execute("L");
+
+        assertEquals(position, "5,5,W");
+    }
+
+    @Test
+    public void shouldFaceNorthAfterTurnLeftCommandWhenFacingEast() {
+        MarsRoverClient marsRoverClient = new MarsRoverClient("5,5,E");
+
+        String position = marsRoverClient.execute("L");
+
+        assertEquals(position, "5,5,N");
+    }
+
+    @Test
+    public void shouldFaceEastAfterTurnLeftCommandWhenFacingSouth() {
+        MarsRoverClient marsRoverClient = new MarsRoverClient("5,5,S");
+
+        String position = marsRoverClient.execute("L");
+
+        assertEquals(position, "5,5,E");
+    }
+
+    @Test
+    public void shouldFaceSouthAfterTurnLeftCommandWhenFacingWest() {
+        MarsRoverClient marsRoverClient = new MarsRoverClient("5,5,W");
+
+        String position = marsRoverClient.execute("L");
+
+        assertEquals(position, "5,5,S");
+    }
 }
