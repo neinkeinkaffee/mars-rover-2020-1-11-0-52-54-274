@@ -10,29 +10,11 @@ public class MarsRoverClient {
     public String execute(String command) {
         String currentDirection = this.position.split(",")[2];
         if (command.equals("R")) {
-            return moveRight(currentDirection);
+            return turnRight(currentDirection);
         } else if (command.equals("L")) {
-            return moveLeft(currentDirection);
+            return turnLeft(currentDirection);
         }
         return moveForward(currentDirection);
-    }
-
-    private String moveLeft(String currentDirection) {
-        switch (currentDirection) {
-            case "N": {
-                return "5,5,W";
-            }
-            case "E": {
-                return "5,5,N";
-            }
-            case "S": {
-                return "5,5,E";
-            }
-            case "W": {
-                return "5,5,S";
-            }
-        }
-        return null;
     }
 
     private String moveForward(String currentDirection) {
@@ -53,7 +35,7 @@ public class MarsRoverClient {
         return null;
     }
 
-    private String moveRight(String currentDirection) {
+    private String turnRight(String currentDirection) {
         switch (currentDirection) {
             case "N": {
                 return "5,5,E";
@@ -66,6 +48,24 @@ public class MarsRoverClient {
             }
             case "W": {
                 return "5,5,N";
+            }
+        }
+        return null;
+    }
+
+    private String turnLeft(String currentDirection) {
+        switch (currentDirection) {
+            case "N": {
+                return "5,5,W";
+            }
+            case "E": {
+                return "5,5,N";
+            }
+            case "S": {
+                return "5,5,E";
+            }
+            case "W": {
+                return "5,5,S";
             }
         }
         return null;
