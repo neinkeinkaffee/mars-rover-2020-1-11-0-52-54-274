@@ -50,18 +50,27 @@ public class MarsRover {
     public String moveForward() {
         switch(this.direction) {
             case "N": {
-                return String.join(",", String.valueOf(this.x), String.valueOf(this.y + 1), this.direction);
+                this.y += 1;
+                break;
             }
             case "S": {
-                return "5,4,S";
+                this.y -= 1;
+                break;
             }
             case "E": {
-                return "6,5,E";
+                this.x += 1;
+                break;
             }
             case "W": {
-                return "4,5,W";
+                this.x -= 1;
+                break;
             }
         }
-        return null;
+        return this.toString();
+    }
+
+    @Override
+    public String toString() {
+        return String.join(",", String.valueOf(this.x), String.valueOf(this.y), this.direction);
     }
 }

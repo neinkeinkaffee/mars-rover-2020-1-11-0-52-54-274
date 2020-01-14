@@ -11,7 +11,7 @@ public class MarsRoverClientTest {
 
         String position = marsRoverClient.execute("M");
 
-        assertEquals(position, "5,6,N");
+        assertEquals("5,6,N", position);
     }
 
     @Test
@@ -29,7 +29,7 @@ public class MarsRoverClientTest {
 
         String position = marsRoverClient.execute("M");
 
-        assertEquals(position, "6,5,E");
+        assertEquals("6,5,E", position);
     }
 
     @Test
@@ -38,7 +38,7 @@ public class MarsRoverClientTest {
 
         String position = marsRoverClient.execute("M");
 
-        assertEquals(position, "4,5,W");
+        assertEquals("4,5,W", position);
     }
 
     @Test
@@ -47,7 +47,7 @@ public class MarsRoverClientTest {
 
         String position = marsRoverClient.execute("R");
 
-        assertEquals(position, "5,5,E");
+        assertEquals("5,5,E", position);
     }
 
     @Test
@@ -56,7 +56,7 @@ public class MarsRoverClientTest {
 
         String position = marsRoverClient.execute("R");
 
-        assertEquals(position, "5,5,S");
+        assertEquals("5,5,S", position);
     }
 
     @Test
@@ -65,7 +65,7 @@ public class MarsRoverClientTest {
 
         String position = marsRoverClient.execute("R");
 
-        assertEquals(position, "5,5,W");
+        assertEquals("5,5,W", position);
     }
 
     @Test
@@ -74,7 +74,7 @@ public class MarsRoverClientTest {
 
         String position = marsRoverClient.execute("R");
 
-        assertEquals(position, "5,5,N");
+        assertEquals("5,5,N", position);
     }
 
     @Test
@@ -83,7 +83,7 @@ public class MarsRoverClientTest {
 
         String position = marsRoverClient.execute("L");
 
-        assertEquals(position, "5,5,W");
+        assertEquals("5,5,W", position);
     }
 
     @Test
@@ -92,7 +92,7 @@ public class MarsRoverClientTest {
 
         String position = marsRoverClient.execute("L");
 
-        assertEquals(position, "5,5,N");
+        assertEquals("5,5,N", position);
     }
 
     @Test
@@ -101,7 +101,7 @@ public class MarsRoverClientTest {
 
         String position = marsRoverClient.execute("L");
 
-        assertEquals(position, "5,5,E");
+        assertEquals("5,5,E", position);
     }
 
     @Test
@@ -110,7 +110,7 @@ public class MarsRoverClientTest {
 
         String position = marsRoverClient.execute("L");
 
-        assertEquals(position, "5,5,S");
+        assertEquals("5,5,S", position);
     }
 
     @Test
@@ -119,6 +119,33 @@ public class MarsRoverClientTest {
 
         String position = marsRoverClient.execute("M");
 
-        assertEquals(position, "1,2,N");
+        assertEquals("1,2,N", position);
+    }
+
+    @Test
+    public void shouldMoveOneStepEastOnMoveCommandWhenFacingEastAndLocatedIn1_1() {
+        MarsRoverClient marsRoverClient = new MarsRoverClient("1,1,E");
+
+        String position = marsRoverClient.execute("M");
+
+        assertEquals("2,1,E", position);
+    }
+
+    @Test
+    public void shouldMoveOneStepSouthOnMoveCommandWhenFacingSouthAndLocatedIn1_1() {
+        MarsRoverClient marsRoverClient = new MarsRoverClient("1,1,S");
+
+        String position = marsRoverClient.execute("M");
+
+        assertEquals("1,0,S", position);
+    }
+
+    @Test
+    public void shouldMoveOneStepWestOnMoveCommandWhenFacingWestAndLocatedIn1_1() {
+        MarsRoverClient marsRoverClient = new MarsRoverClient("1,1,W");
+
+        String position = marsRoverClient.execute("M");
+
+        assertEquals("0,1,W", position);
     }
 }
