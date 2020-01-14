@@ -34,7 +34,7 @@ init(5,5,S) + L => (5,5,E)
 init(5,5,W) + L => (5,5,S)
 ```
 
-* Move forward command should result in one step in current direction **for arbitrary start location***
+* Move forward command should result in one step in current direction **for arbitrary start location**
 ```
 init(1,1,N) + M => (1,2,N)
 init(3,7,S) + M => (2,7,S)
