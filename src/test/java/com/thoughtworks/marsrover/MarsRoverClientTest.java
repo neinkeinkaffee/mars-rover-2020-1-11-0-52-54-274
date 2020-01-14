@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 public class MarsRoverClientTest {
     @Test
-    public void shouldMoveOneStepNorthOnMoveCommandWhenFacingNorth() {
+    public void shouldMoveOneStepNorthOnMoveCommandWhenFacingNorthAndLocatedIn5_5() {
         MarsRoverClient marsRoverClient = new MarsRoverClient("5,5,N");
 
         String position = marsRoverClient.execute("M");
@@ -15,7 +15,7 @@ public class MarsRoverClientTest {
     }
 
     @Test
-    public void shouldMoveOneStepSouthOnMoveCommandWhenFacingSouth() {
+    public void shouldMoveOneStepSouthOnMoveCommandWhenFacingSouthAndLocatedIn5_5() {
         MarsRoverClient marsRoverClient = new MarsRoverClient("5,5,S");
 
         String position = marsRoverClient.execute("M");
@@ -24,7 +24,7 @@ public class MarsRoverClientTest {
     }
 
     @Test
-    public void shouldMoveOneStepEastOnMoveCommandWhenFacingEast() {
+    public void shouldMoveOneStepEastOnMoveCommandWhenFacingEastAndLocatedIn5_5() {
         MarsRoverClient marsRoverClient = new MarsRoverClient("5,5,E");
 
         String position = marsRoverClient.execute("M");
@@ -33,7 +33,7 @@ public class MarsRoverClientTest {
     }
 
     @Test
-    public void shouldMoveOneStepWestOnMoveCommandWhenFacingWest() {
+    public void shouldMoveOneStepWestOnMoveCommandWhenFacingWestAndLocatedIn5_5() {
         MarsRoverClient marsRoverClient = new MarsRoverClient("5,5,W");
 
         String position = marsRoverClient.execute("M");
