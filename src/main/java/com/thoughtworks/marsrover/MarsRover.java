@@ -11,7 +11,7 @@ public class MarsRover {
         this.direction = direction;
     }
 
-    public String turnRight() {
+    public void turnRight() {
         switch (this.direction) {
             case "N": {
                 this.direction = "E";
@@ -30,10 +30,9 @@ public class MarsRover {
                 break;
             }
         }
-        return this.toString();
     }
 
-    public String turnLeft() {
+    public void turnLeft() {
         switch (this.direction) {
             case "N": {
                 this.direction = "W";
@@ -52,10 +51,9 @@ public class MarsRover {
                 break;
             }
         }
-        return this.toString();
     }
 
-    public String moveForward() {
+    public void moveForward() {
         switch(this.direction) {
             case "N": {
                 this.y += 1;
@@ -74,7 +72,6 @@ public class MarsRover {
                 break;
             }
         }
-        return this.toString();
     }
 
     @Override

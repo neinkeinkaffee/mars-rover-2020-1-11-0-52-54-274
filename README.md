@@ -47,5 +47,5 @@ init(5,5,N) + ML => (5,6,W)
 
 * Chain of multiple commands results in change of location and direction
 ```
-init(5,5,N) + MLRMMRM => (4,8,E)
+init(5,5,N) + MLRMMRM => (6,8,E)
 ```

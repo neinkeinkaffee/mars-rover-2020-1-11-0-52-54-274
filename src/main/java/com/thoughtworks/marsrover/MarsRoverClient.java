@@ -10,12 +10,23 @@ public class MarsRoverClient {
         this.marsRover = new MarsRover(x, y, direction);
     }
 
-    public String execute(String command) {
-        if (command.equals("R")) {
-            return marsRover.turnRight();
-        } else if (command.equals("L")) {
-            return marsRover.turnLeft();
+    public String execute(String commands) {
+        for (String command : commands.split("")) {
+            switch (command) {
+                case "R": {
+                    marsRover.turnRight();
+                    break;
+                }
+                case "L": {
+                    marsRover.turnLeft();
+                    break;
+                }
+                case "M": {
+                    marsRover.moveForward();
+                    break;
+                }
+            }
         }
-        return marsRover.moveForward();
+        return marsRover.toString();
     }
 }

@@ -166,4 +166,22 @@ public class MarsRoverClientTest {
 
         assertEquals("1,1,E", position);
     }
+
+    @Test
+    public void shouldExecuteTwoSuccessiveCommands() {
+        MarsRoverClient marsRoverClient = new MarsRoverClient("5,5,N");
+
+        String position = marsRoverClient.execute("ML");
+
+        assertEquals("5,6,W", position);
+    }
+
+    @Test
+    public void shouldExecuteStringOfSuccessiveCommands() {
+        MarsRoverClient marsRoverClient = new MarsRoverClient("5,5,N");
+
+        String position = marsRoverClient.execute("MLRMMRM");
+
+        assertEquals("6,8,E", position);
+    }
 }
