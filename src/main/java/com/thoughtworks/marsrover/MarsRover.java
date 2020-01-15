@@ -14,37 +14,45 @@ public class MarsRover {
     public String turnRight() {
         switch (this.direction) {
             case "N": {
-                return "5,5,E";
+                this.direction = "E";
+                break;
             }
             case "E": {
-                return "5,5,S";
+                this.direction = "S";
+                break;
             }
             case "S": {
-                return "5,5,W";
+                this.direction = "W";
+                break;
             }
             case "W": {
-                return "5,5,N";
+                this.direction = "N";
+                break;
             }
         }
-        return null;
+        return this.toString();
     }
 
     public String turnLeft() {
         switch (this.direction) {
             case "N": {
-                return "5,5,W";
+                this.direction = "W";
+                break;
             }
             case "E": {
-                return "5,5,N";
+                this.direction = "N";
+                break;
             }
             case "S": {
-                return "5,5,E";
+                this.direction = "E";
+                break;
             }
             case "W": {
-                return "5,5,S";
+                this.direction = "S";
+                break;
             }
         }
-        return null;
+        return this.toString();
     }
 
     public String moveForward() {
